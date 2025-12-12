@@ -1,0 +1,13 @@
+import requests
+import json
+
+url = "https://dummyjson.com/products"
+response = requests.get(url)
+
+data = response.json()
+print("Total products:", data['total'])
+
+with open("products.json", "w") as f:
+    json.dump(data, f, indent=4)
+
+print("Saved to products.json")

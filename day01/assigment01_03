@@ -1,0 +1,37 @@
+import csv
+
+with open('C:\\Users\\shrey\\Desktop\\GenAI\\IIIT_GENAI_94714\\products.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    rows = list(reader)
+
+print("\n--- Product List ---")
+for r in rows:
+    print(f"ID: {r['product_id']}, Name: {r['product_name']}, Category: {r['category']}, Price: {r['price']}, Quantity: {r['quantity']}")
+
+print("\nTotal rows:", len(rows))
+
+count_above_500 = 0
+for r in rows:
+    if float(r['price']) > 500:
+        count_above_500 += 1
+
+print("Products priced above 500:", count_above_500)
+
+total_price = 0
+for r in rows:
+    total_price += float(r['price'])
+
+avg_price = total_price / len(rows)
+print("Average price:", avg_price)
+
+cat = input("\nEnter category to search: ")
+print("\nProducts in category", cat, ":")
+for r in rows:
+    if r['category'].lower() == cat.lower():
+        print(r['product_name'])
+
+total_qty = 0
+for r in rows:
+    total_qty += int(r['quantity'])
+
+print("\nTotal Quantity in stock:", total_qty)

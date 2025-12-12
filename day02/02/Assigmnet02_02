@@ -1,0 +1,11 @@
+import requests
+
+print("Hello!")
+print("Requests version:")
+print(requests.__version__)
+
+
+import pandas as pd
+
+print("Pandas version:")
+print(pd.__version__)
