@@ -5,7 +5,7 @@ import json
 api_key = os.getenv("GROQ_API_KEY")
 url = "https://api.groq.com/openai/v1/chat/completions"
 headers = {
-    "Authorization": f"Bearer {'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'}",
+    "Authorization": f"Bearer {api_key}",
     "Content-Type": "application/json"
 }
 
