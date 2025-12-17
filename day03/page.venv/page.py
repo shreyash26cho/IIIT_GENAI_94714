@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 # Load API key from .env
 load_dotenv()
-API_KEY = os.getenv("4893805586e199fdf05ac6ae16e5d413")
+API_KEY = os.getenv("apikey")
 
 st.title("Login → Weather App")
 
