@@ -5,8 +5,8 @@ import json
 api_key = os.getenv("GROQ_API_KEY")
 url = "https://api.groq.com/openai/v1/chat/completions"
 headers = {
-    "Authorization": "Bearer {api_key}",
-    "Content-Type": "application/json"
+     "Content-Type": "application/json",
+    "Authorization": f"Bearer {api_key}"
 }
 
 user_prompt = input("Ask anything: ")
