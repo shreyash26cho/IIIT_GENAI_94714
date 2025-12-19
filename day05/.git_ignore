@@ -14,7 +14,7 @@ env/
 # -------- STREAMLIT --------
 .streamlit/
 
-# -------- IDE / EDITOR --------
+# -------- IDE --------
 .vscode/
 .idea/
 
