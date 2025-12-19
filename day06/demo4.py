@@ -1,9 +1,12 @@
 from langchain_groq import ChatGroq
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
-    api_key='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'
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 conversation = [
@@ -16,15 +19,9 @@ while True:
     if user_input.lower() == "exit":
         break
 
-    conversation.append({
-        "role": "user",
-        "content": user_input
-    })
+    conversation.append({"role": "user", "content": user_input})
 
     response = llm.invoke(conversation)
     print("AI:", response.content)
 
-    conversation.append({
-        "role": "assistant",
-        "content": response.content
-    })
+    conversation.append({"role": "assistant", "content": response.content})
