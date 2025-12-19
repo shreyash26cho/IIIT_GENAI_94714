@@ -1,0 +1,23 @@
+# -------- ENV FILE (API KEYS) --------
+.env
+
+# -------- PYTHON CACHE --------
+__pycache__/
+*.pyc
+*.pyo
+
+# -------- VIRTUAL ENV --------
+venv/
+env/
+.venv/
+
+# -------- STREAMLIT --------
+.streamlit/
+
+# -------- IDE / EDITOR --------
+.vscode/
+.idea/
+
+# -------- OS FILES --------
+Thumbs.db
+.DS_Store
