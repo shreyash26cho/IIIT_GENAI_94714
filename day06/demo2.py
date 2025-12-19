@@ -1,22 +1,21 @@
 import streamlit as st
-from langchain_openai import ChatOpenAI
+from langchain.chat_models import init_chat_model
 import os
 
-st.title("LangChain + LM Studio Chat")
 
-# Initialize model
-llm = ChatOpenAI (
-    base_url="https://api.groq.com/openai/v1",
-    api_key='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',
-    model="meta-llama-3.1-8b-instruct"
+
+st.title("langchain_model")
+llm =init_chat_model(
+   model="meta-llama-3.1-8b-instruct",
+   model_provider="openai",
+   base_url="http://127.0.0.1:1234/v1",
+   api_key=os.getenv('')
+
 )
 
-
-user_input = st.chat_input("Say something...")
-
-# Streaming response
+user_input=st.chat_input("say something")
 if user_input:
-    st.write("**AI:**")
-    st.write_stream(
-        (chunk.content for chunk in llm.stream(user_input))
-    )
+    result=llm.stream(user_input)
+
+st.write_stream([chunk.content for chunk in result])   
+
