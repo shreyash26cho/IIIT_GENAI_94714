@@ -9,7 +9,7 @@ import pandas as pd
 load_dotenv()
 
 
-Api_key='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'
+Api_key='GROQ_API_key'
 print(Api_key)
 
 @tool
@@ -40,7 +40,7 @@ def weather_details(city):
     instrustion : it only gives current detials about weather not past or future  
      '''
 
-     API_key = '4893805586e199fdf05ac6ae16e5d413'
+     API_key = 'OpenWeather_API_key'
      print(API_key)
      url=f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}"
  
