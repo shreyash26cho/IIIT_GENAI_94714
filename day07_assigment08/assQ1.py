@@ -9,7 +9,7 @@ import pandas as pd
 load_dotenv()
 
 
-Api_key='GROQ_API_key'
+Api_key='GROQ_API_KEY'
 print(Api_key)
 
 @tool
