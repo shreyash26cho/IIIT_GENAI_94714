@@ -6,7 +6,7 @@ Yuno is gifted with wind magic.
 Both dream of becoming the Wizard King."""
 
 # RecursiveCharacterTextSplitter does NOT need a manual separator
-text_splitter = RecursiveCharacterTextSplitter(
+text_splitter = CharacterTextSplitter(
     chunk_size=50,
     chunk_overlap=10
 )
